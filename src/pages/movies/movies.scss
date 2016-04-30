@@ -1,0 +1,57 @@
+$border-color: #29cc6d;
+
+* {
+    box-sizing: border-box;
+}
+
+.Movies {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    &__Header {
+        display: flex;
+        padding: 0 10px;
+
+        &__Select, &__Input {
+            border: 1px solid $border-color; 
+            line-height: 2em;
+            flex: 1;
+        }
+
+        &__Input {
+        }
+    }
+
+    &__List {
+        flex: 1;
+        padding: 0 10px;
+        overflow-y: auto;
+    }
+
+    &__Item {
+        border-bottom: 1px solid #efefef;
+        padding: 10px 0;
+        display: flex;
+
+        &__Poster {
+            height: 100px;
+        }
+
+        &__Details {
+            flex: 1;
+            display: flex;
+            overflow: hidden;
+            padding-left: 10px;
+            flex-direction: column;
+            font-size: 14px;
+        }
+
+        &__Name {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: block;
+        }
+    }
+}
