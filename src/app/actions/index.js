@@ -8,7 +8,7 @@ export function fetchMovies(name = 'Jason Statham') {
     
     return (dispatch, getState) => {
         const cache = session.getItem(url)
-        // check cache policy, targeted rescource will be reture directly
+        // check cache policy, targeted rescource will be returned directly
         if(cache) {
             dispatch(receiveMovies(JSON.parse(cache)))
         } else {

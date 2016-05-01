@@ -1,9 +1,8 @@
 {
-  "name": "pepper",
-  "version": "0.0.1",
+  "name": "redux-and-reselect-toturials",
+  "version": "1.0.0",
   "description": "wepiao front end solution",
-  "main": "app.js",
-  "author": "FEI@wepiao.com",
+  "author": "duanhong@wepiao.com",
   "license": "ISC",
   "scripts": {
     "start": "pepper start",
@@ -21,6 +20,7 @@
     "redux": "^3.5.2",
     "redux-logger": "^2.6.1",
     "redux-thunk": "^2.0.1",
+    "reselect": "^2.5.1",
     "whatwg-fetch": "^1.0.0"
   }
 }
