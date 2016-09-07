@@ -1,4 +1,5 @@
 import { FETCH_MOVIES, FILTER_MOVIES } from 'app/constants'
+import { handleActions } from 'redux-actions'
 
 const initState = {
     movies: [],
@@ -9,21 +10,22 @@ const initState = {
     loading: true
 }
 
-export default (state = initState, action) => {
-    switch(action.type) {
-        case FETCH_MOVIES:
-            // when receive movies from action
-            const { movies } = action;
+let handler = {}
 
-            return Object.assign({}, state, {
-                movies,
-                loading: false
-            })
-        case FILTER_MOVIES: 
-            return Object.assign({}, state, {
-                filter: { ...state.filter, ...action.filter }
-            })
-        default:
-            return state
-    }
+handler[FETCH_MOVIES] = (state, action) => {
+    // when receive movies from action
+    const { movies } = action;
+
+    return Object.assign({}, state, {
+        movies,
+        loading: false
+    })
 }
+
+handler[FILTER_MOVIES] = (state, action) => {
+    return Object.assign({}, state, {
+        filter: { ...state.filter, ...action.filter }
+    })
+}
+
+export default handleActions(handler, initState)

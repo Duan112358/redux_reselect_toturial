@@ -2,8 +2,11 @@ import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import reducer from 'app/reducers'
 import { routerReducer, routerMiddleware } from 'react-router-redux'
+import createSagaMiddleware from 'redux-saga'
+import sagas from '../sagas'
 
-let middlewares = [thunk]
+let sagaMiddleware = createSagaMiddleware()
+let middlewares = [thunk, sagaMiddleware]
 
 // exported by pepper
 const MODE = process.env.MODE
@@ -28,5 +31,10 @@ export default (history, initialState) => {
     // apply middlewares within store
     const createStoreWithMiddleware = applyMiddleware(...middlewares)(createStore)
     // bind reducer and initState
-    return createStoreWithMiddleware(reducer, initialState)
+    const store = createStoreWithMiddleware(reducer, initialState)
+
+    // run the saga
+    sagaMiddleware.run(sagas)
+
+    return store
 }

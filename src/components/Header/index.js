@@ -9,7 +9,7 @@
 import classnames from 'classnames'
 import { Link } from 'react-router'
 
-import styles from './style'
+import './style'
 
 export default class Header extends React.Component {
 
@@ -40,21 +40,19 @@ export default class Header extends React.Component {
     }
 
     render() {
-        // current active index
-        let activeIndex = this.state.activeIndex;
-        
+        let pathname = this.props.pathname
         // combine classname with active
-        let menuClass = (index) => {
-            return classnames(styles['nav-item'], { [styles['active']]: index === activeIndex })
+        let menuClass = (text) => {
+            return classnames('nav-item', { 'active': ~pathname.indexOf(text.toLowerCase()) })
         }
 
         let menus = this.props.menus;
 
         return <header>
-            <ul className={classnames(styles['nav'], this.props.className)}>
+            <ul className={classnames('nav', this.props.className)}>
             {
                 menus.map((menu, index) => {
-                    return <li key={index} className={menuClass(index)}>
+                    return <li key={index} className={menuClass(menu.text)}>
                         <Link to={menu.link} onClick={this.onMenuClick.bind(this, index)}>
                             { menu.text }
                         </Link>

@@ -1,26 +1,28 @@
 import Header from 'wepiao/Header'
 import styles from './style'
 
-export default class Home extends React.Component {
+const MENUS = {
+    menus: [{
+        text: 'Home',
+        link: '/'
+    }, {
+        text: 'Saga',
+        link: '/sagas',
+    },{
+        text: 'About',
+        link: '/about'
+    }],
+    current: 'Home'
+}
 
-    state = {
-        menus: [{
-            text: 'Home',
-            link: '/'
-        }, {
-            text: 'About',
-            link: '/about'
-        }],
-        current: 'Home'
-    }
+export default class Home extends React.Component {
 
     render() {
 
         return (
             <div className='Home'>
-                <Header menus={this.state.menus} />
-                <h2 className="Home__Title">This is {this.state.current} page</h2>
-                <p className="Home__Desc">Click About to load about page </p>
+                <Header menus={MENUS.menus} pathname={this.props.location.pathname.slice(1) || 'home'}/>
+                { this.props.children }
             </div>
         )
     }
