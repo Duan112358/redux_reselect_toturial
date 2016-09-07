@@ -22,6 +22,7 @@ resource                                                             |  descript
 [redux](http://redux.js.org)                                       |  react flux implementation, more elegant ang powerful
 [redux-thunk](http://github.com/gaearon/redux-thunk)               |  The easiest way to write async action creators
 [redux-logger](https://github.com/fcomb/redux-logger)              |  Log every Redux action and the next state
+[redux-saga](https://github.com/yelouafi/redux-saga)               |  An alternative side effect model for Redux apps
 [react-router-redux](https://github.com/reactjs/react-router-redux)|  Ruthlessly simple bindings to keep React Router and Redux in sync
 [reselect](https://github.com/faassen/reselect)                    |  Efficient derived data selectors inspired by NuclearJS
 [react-redux](https://github.com/gaearon/react-redux)              |  react binding
