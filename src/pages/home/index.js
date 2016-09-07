@@ -1,4 +1,4 @@
-import Header from 'wepiao/Header'
+import Header from 'components/Header'
 import styles from './style'
 
 const MENUS = {

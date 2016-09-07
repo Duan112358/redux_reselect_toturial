@@ -15,8 +15,8 @@ module.exports = {
     "static": {
         "start"         :   "",                    // here use relative path
         "test"          :   "",
-        "pre"           :   "//static.wepiao.com/",// here use CDN domain
-        "release"       :   "//static.wepiao.com/" // here use CDN domain
+        "pre"           :   "//static.example.com/",// here use CDN domain
+        "release"       :   "//static.example.com/" // here use CDN domain
     },
 
     // globals
@@ -24,15 +24,15 @@ module.exports = {
         // config `mock.js` for CROS solution
         "static_api": {
             "start"     :   "",                    // local api base entry
-            "test"      :   "//m.wepiao.com",
-            "pre"       :   "//m.wepiao.com",      // online api base entry
-            "release"   :   "//m.wepiao.com"
+            "test"      :   "//m.example.com",
+            "pre"       :   "//m.example.com",      // online api base entry
+            "release"   :   "//m.example.com"
         },
         "api": {  
           "start"       :   "",
           "test"        :   "",
-          "pre"         :   "//api.wepiao.com",
-          "release"     :   "//api.wepiao.com"
+          "pre"         :   "//api.example.com",
+          "release"     :   "//api.example.com"
       }
     },
 
@@ -42,7 +42,7 @@ module.exports = {
     // dir alias, could use globally, despite of CWD
     "alias": {
         "scss"          :   "scss",
-        "wepiao"        :   "components",
+        "components"    :   "components",
         "utils"         :   "utils",
         "app"           :   "app"
     },
